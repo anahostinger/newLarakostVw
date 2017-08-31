@@ -56,14 +56,14 @@ function showHelp(url) {
     var target = "_blank";
 
     var options = "location=yes,hidden=yes";
+	inAppBrowserRef = window.open(url, target, options);
+    // inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
 
-    inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
+    // inAppBrowserRef.addEventListener('loadstart', loadStartCallBack);
 
-    inAppBrowserRef.addEventListener('loadstart', loadStartCallBack);
+    // inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
 
-    inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
-
-    inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
+    // inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
 
 }
 
