@@ -52,18 +52,33 @@ var app = {
 var inAppBrowserRef;
 
 function showHelp(url) {
+    "use strict";
+    // var fName = "extPageSysBrowser():";
+    // console.log(fName, "entry");
+    try {
+        // if (window.tinyHippos) {
+            // emulatorAlert();
+            // // console.log(fName, "emulator alert");
+        // } else {
+			var ref = window.open('https://larakost.id/login', '_system', 'location=yes');
+			// var ref = window.open('https://larakost.id/login', '_blank', 'location=yes');
+            // console.log(fName, "try, success");
+        // }
+    } catch (e) {
+		alert('Gagal open window');
+        // console.log(fName, "catch, failure");
+    }
 
-    var target = "_blank";
+    // console.log(fName, "exit");
+	
+	// // inAppBrowserRef = window.open(url, target, options);
+    // inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
 
-    var options = "location=yes,hidden=yes";
-	// inAppBrowserRef = window.open(url, target, options);
-    inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
+    // inAppBrowserRef.addEventListener('loadstart', loadStartCallBack);
 
-    inAppBrowserRef.addEventListener('loadstart', loadStartCallBack);
+    // inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
 
-    inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
-
-    inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
+    // inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
 
 }
 
